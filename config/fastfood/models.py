@@ -33,3 +33,28 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order #{self.id} by {self.customer.name}"
+
+class Theme(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class Comment(models.Model):
+    text = models.TextField()
+    theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text
+
+class Reply_to_Comment(models.Model):
+    text = models.TextField()
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text
+
+
+
+

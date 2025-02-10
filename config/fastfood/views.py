@@ -39,3 +39,41 @@ class CustomerRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView
     serializer_class = CustomerSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+
+class ThemeListView(generics.ListCreateAPIView):
+    queryset = Theme.objects.all()
+    serializer_class = ThemeSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class ThemeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Theme.objects.all()
+    serializer_class = ThemeSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class CommentListView(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class CommentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class Reply_to_CommentListView(generics.ListCreateAPIView):
+    queryset = Reply_to_Comment.objects.all()
+    serializer_class = Reply_to_CommentSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class Reply_to_CommentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Reply_to_Comment.objects.all()
+    serializer_class = Reply_to_CommentSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+
